@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -8,15 +8,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="./css/cinema_style.css">
-    <title>Hello, world!</title>
+
+    <link rel="stylesheet" href="./css/cinema_style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous">
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+        $('[data-toggle="popover"]').popover()
+        })
+            $('.popover-dismiss').popover({
+            trigger: 'focus'
+            })
+    </script>
+
 </head>
 <body id="home">
+    
     <!--content here-->
     <div class="container">
 
         <!--navigation-->
-        <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light" style="background-color: #164b99;"> 
+        <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light" style="background-color: #07449ec7;"> 
             <!--fixed top make it go the way across on the top-->
             <!--<a class="navbar-brand" href="#"></a>--> <!--Navbar togglers are left-aligned by default, but should they follow a sibling element like a .navbar-brand, they’ll automatically be aligned to the far right.-->
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,12 +65,15 @@
         <!--navigation-->
 
         <!--Jumbotron-->
-        <div class="jumbotron jumbotron-fluid text-center mt-4 hidden-md-down" style="background-color: rgb(6, 135, 139)"> 
+        <div class="jumbotron jumbotron-fluid text-center mt-4 hidden-md-down" style="background-color: rgba(1, 186, 193, 0.712)"> 
             <!--bg-info:that blue color. mt-4:margin top has some top margin
             hidden-md-down hides an element on extra-small, small, and medium viewports.-->
             <div class="container">
               <h1 class="display-2">Academy Cinemas</h1>
               <p class="lead">Sit back, relax, and enjoy the show...</p>
+              <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#register">See Our
+                  Monthly Deals!
+              </button>
             </div>
           </div>
         <!--/Jumbotron-->
@@ -230,14 +249,94 @@
                 <h1 class="display-5 my-5 text-primary">Stay current on the movies!</h1>
                 <div class="col-sm-12">
                     <input type="email" class="form-control form-control-lg mr-auto" id="lgFormGroupInput" placeholder="you@example.com">
-                    <button type="button" class="btn btn-outline-primary mt-4 mr-auto">Sign up!</button>
+                    <button type="button" class="btn btn-secondary btn-info .popover-dismiss" data-container="body" data-toggle="popover" data-placement="top" data-content="submit your email to receive great movie rewards">
+                            Sign Up!
+                          </button>
                 </div>
             </div>
         </form>
 			</div>
-        <!--/sign up form-->
+        <!--/END OF sign up form-->
 
-    <!--footer--> <!--Movie Rewards Movies@news.org    Info@academycinemas.com  ©2017 Academy Cinemas®-->
+        <!--form modal-->
+        <div class="modal" tabindex="-1" role="dialog" id="register">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Register to receive deals</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-10">
+                                <input type="name" class="form-control" id="inputName" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                </div>
+                            </div>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                <label class="col-form-label col-sm-2">Contact Method</label>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Email
+                                    </label>
+                                    </div>
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Text
+                                    </label>
+                                    </div>
+                                    <div class="form-check disabled">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                    <label class="form-check-label" for="gridRadios3">
+                                        Please don't contact me!
+                                    </label>
+                                    </div>
+                                </div>
+                                </div>
+                            </fieldset>
+                            <div class="form-group row">
+                                <label class="col-sm-2">Subscribe</label>
+                                <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                    Check to subscribe
+                                    </label>
+                                </div>
+                                </div>
+                            </div>
+                        </form>       
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Submit</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <!--/END of form modal-->
+
+        <!--<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on right
+              </button>
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on top
+              </button>
+        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="Enter your email for some discounts!">Sign Up</a> -->
+    <!--footer--> <Movie Rewards Movies@news.org    Info@academycinemas.com  ©2017 Academy Cinemas®-->
     <div class="container">
             <ul class="nav nav-inline" id="deals">
                 <li class="nav-item">
@@ -259,9 +358,12 @@
     </div>
     <!--/content here-->
     <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
